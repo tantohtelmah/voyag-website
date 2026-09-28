@@ -12,6 +12,25 @@
     .hero{background:linear-gradient(125deg,#f7eee1 0%,#fff8ee 70%);overflow:hidden}.hero-grid{min-height:540px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px;padding-top:62px;padding-bottom:70px}.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--purple)}h1{font-family:Georgia,serif;font-size:clamp(44px,5.3vw,72px);line-height:1.07;letter-spacing:-.035em;margin:18px 0 22px}h2{font-family:Georgia,serif;font-size:clamp(31px,3.4vw,46px);line-height:1.15;letter-spacing:-.025em;margin:12px 0 18px}.lead{font-size:19px;max-width:560px;color:#494254}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.outline{display:inline-block;border:1.5px solid var(--purple);color:var(--purple);padding:11px 20px;border-radius:100px;font-weight:700;text-decoration:none}.outline:hover{background:#f1e9f3}.art{position:relative;min-height:410px;background:#ead9c5;border-radius:220px 220px 32px 32px;overflow:hidden;display:flex;align-items:center;justify-content:center}.sun{position:absolute;width:280px;height:280px;border-radius:50%;background:#f3dfb5;top:40px;right:18px}.arch{position:absolute;width:225px;height:340px;border:28px solid #b18459;border-bottom:0;border-radius:180px 180px 0 0;bottom:0;left:56px;opacity:.45}.art-text{position:relative;z-index:1;background:#fff9f2e8;border-radius:18px;padding:28px;max-width:280px;box-shadow:0 16px 35px #583f571c}.art-text strong{font-family:Georgia,serif;font-size:29px;line-height:1.18;display:block}.art-text span{display:block;color:var(--purple);font-weight:700;margin-top:18px;font-size:13px}.art-note{position:absolute;bottom:20px;right:24px;color:#554259;font-size:12px}
     section{padding:88px 0}.intro{display:grid;grid-template-columns:.65fr 1fr;gap:80px}.intro p{font-size:18px;color:var(--muted);margin-top:0}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.value{background:#fff;border:1px solid var(--line);padding:27px;border-radius:16px}.value b{color:var(--purple);font-size:18px}.value p{margin:12px 0 0;color:var(--muted);font-size:15px}.project{background:#fff}.project-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:center}.project p{color:var(--muted);font-size:17px}.project-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}.photo-placeholder{min-height:325px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed #b99877;border-radius:18px;background:linear-gradient(145deg,#f6eee4,#e8d7c5);color:#765b43;font-weight:700;padding:20px}.photo-placeholder span{display:block;font-size:12px;font-weight:500;margin-top:7px}.project-caption{font-size:13px!important;margin-top:18px!important}.strip{background:var(--lilac)}.strip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.strip p{font-size:18px;color:var(--muted)}.label{display:inline-block;border:1px solid #b8a0c2;border-radius:30px;padding:6px 12px;font-size:12px;color:var(--purple);font-weight:800;letter-spacing:.07em;text-transform:uppercase}.card{background:#fff;border-radius:20px;padding:34px;box-shadow:0 12px 30px #46355012}.card h3{font-family:Georgia,serif;font-size:29px;margin:5px 0 12px}.card p{color:var(--muted)}.support{display:grid;grid-template-columns:1fr 1fr;gap:20px}.support .card{border:1px solid var(--line);box-shadow:none}.support .card a{font-weight:800;color:var(--purple)}footer{background:#272033;color:#fff;padding:40px 0}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}footer a{color:#fff}footer small{color:#d5cbd8}
     @media(max-width:760px){.nav{height:auto;padding-top:18px;padding-bottom:18px;align-items:flex-start}.links{gap:12px;flex-wrap:wrap;justify-content:flex-end}.links a:nth-child(2){display:none}.hero-grid,.intro,.project-grid,.strip .wrap,.support{grid-template-columns:1fr;gap:30px}.hero-grid{padding-top:55px}.art{min-height:300px}.values{grid-template-columns:1fr}.photo-placeholder{min-height:250px}.strip .wrap{gap:22px}.footer{align-items:flex-start;flex-direction:column}section{padding:64px 0}}
+    .project-gallery .photo-placeholder {
+      height: 325px;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .project-gallery .photo-placeholder img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 760px) {
+      .project-gallery .photo-placeholder {
+        height: 250px;
+      }
+    }
   </style>
 </head>
 <body>

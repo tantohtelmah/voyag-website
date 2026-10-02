@@ -512,6 +512,174 @@
         scroll-behavior: auto;
       }
     }
+    /* VOYAG logo-inspired theme */
+:root {
+  --ink: #302033;
+  --muted: #6d5d6a;
+  --purple: #650c4f;
+  --gold: #cc9137;
+  --coral: #f57560;
+  --lilac: #f7edf4;
+  --cream: #fffaf5;
+  --line: #eadce5;
+}
+
+header {
+  background: #fffaf5;
+  border-bottom: 2px solid var(--gold);
+}
+
+.nav {
+  min-height: 130px;
+}
+
+/* Larger header logo */
+.brand img {
+  width: 180px;
+  height: 114px;
+  object-fit: contain;
+}
+
+.links a:hover {
+  color: var(--purple);
+}
+
+.pill {
+  background: var(--purple);
+}
+
+.pill:hover {
+  background: #480838;
+}
+
+.outline {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.outline:hover {
+  background: #f5e6ef;
+}
+
+.hero {
+  background: linear-gradient(
+    125deg,
+    #f7edf4 0%,
+    #fffaf5 55%,
+    #fff0db 100%
+  );
+}
+
+h1,
+h2,
+.card h3 {
+  color: var(--purple);
+}
+
+.art {
+  min-height: 460px;
+  background: #f1dfeb;
+}
+
+.sun {
+  background: #efd09c;
+}
+
+.arch {
+  border-color: var(--coral);
+  opacity: .55;
+}
+
+.art-text {
+  max-width: 340px;
+  padding: 30px;
+  background: #fffaf5f5;
+  box-shadow: 0 16px 35px #650c4f18;
+}
+
+.hero-logo {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+.art-text strong {
+  color: var(--purple);
+}
+
+.value {
+  border-top: 4px solid var(--gold);
+}
+
+.value:nth-child(2) {
+  border-top-color: var(--coral);
+}
+
+.value:nth-child(3) {
+  border-top-color: var(--purple);
+}
+
+.story {
+  background: #f7edf4;
+}
+
+.strip {
+  background: #fff0db;
+}
+
+.label {
+  border-color: var(--gold);
+  color: var(--purple);
+}
+
+.photo-placeholder {
+  border-color: var(--gold);
+  background: #fff5e7;
+}
+
+footer {
+  background: #480838;
+}
+
+footer small {
+  color: #ead9e5;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    min-height: 110px;
+  }
+
+  .brand img {
+    width: 140px;
+    height: 94px;
+  }
+
+  .art {
+    min-height: 390px;
+  }
+
+  .hero-logo {
+    width: 220px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    padding-top: 14px;
+    padding-bottom: 18px;
+  }
+
+  .brand img {
+    width: 160px;
+    height: 110px;
+  }
+
+  .art-text {
+    padding: 24px;
+  }
+}
   </style>
 </head>
 

@@ -680,7 +680,33 @@ footer small {
     padding: 24px;
   }
 }
-  </style>
+  
+/* Pink October: rose, forest green and VOYAG gold. */
+.links { flex-wrap: wrap; justify-content: flex-end; gap: 18px; }
+.announcement { --event-green: #174c3c; background: linear-gradient(120deg,#fff4f8,#fce4ed 65%,#fff4df); border-block: 1px solid #efd0dc; scroll-margin-top: 24px; }
+.announcement-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+.announcement .eyebrow { color: #9d2457; letter-spacing: .12em; }
+.announcement h2 { color: var(--event-green); }
+.announcement-copy { color: #59434e; font-size: 18px; }
+.event-topics { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+.event-topics li { padding: 6px 12px; border: 1px solid #d8adbf; border-radius: 30px; background: #fff8fb; color: #74304d; font-size: 14px; font-weight: 700; }
+.event-card { min-width: 0; padding: 30px; border: 1px solid #e1b7c8; border-top: 5px solid var(--gold); border-radius: 22px; background: #fffdfb; box-shadow: 0 16px 40px #68234012; }
+.event-date { margin: 0; color: var(--event-green); font-size: 24px; font-weight: 800; }
+.event-time { margin: 4px 0 22px; color: #59434e; }
+.event-status { font-weight: 700; color: #74304d; }
+.countdown { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; margin: 18px 0 24px; }
+.countdown[hidden] { display: none; }
+.countdown-unit { text-align: center; background: #fbeaf1; border-radius: 12px; padding: 12px 3px; }
+.countdown-unit strong { display: block; color: var(--event-green); font-size: clamp(24px,3vw,36px); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.countdown-unit span { color: #74304d; font-size: 12px; }
+.event-register { display: block; text-align: center; background: var(--event-green); }
+.event-register:hover { background: #103a2d; }
+.event-note { font-size: 13px; color: #6d5d6a; margin: 10px 0 0; text-align: center; }
+.social-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 14px 0; }
+@media (max-width: 900px) { .announcement-grid { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 420px) { .event-card { padding: 22px 16px; } .links { justify-content: center; gap: 12px; } }
+
+</style>
 </head>
 
 <body>
@@ -696,6 +722,7 @@ footer small {
       </a>
 
       <nav class="links" aria-label="Main navigation">
+        <a href="#announcement">Announcement</a>
         <a href="#about">About</a>
         <a href="#project">Our work</a>
         <a href="#contact">Contact</a>
@@ -737,6 +764,34 @@ footer small {
         </div>
       </div>
     </div>
+
+
+    <section class="announcement" id="announcement" aria-labelledby="announcement-title">
+      <div class="wrap announcement-grid">
+        <div>
+          <div class="eyebrow">Pink October · A new chapter for VOYAG</div>
+          <h2 id="announcement-title">A rebirth. A shared voice.<br>A moment for awareness.</h2>
+          <p class="announcement-copy">On <strong>October 19, 2026</strong>, we mark <strong>VOYAG’s rebrand and rebirth</strong> and commemorate <strong>Breast Cancer Awareness Month</strong>. Join us as we celebrate a new chapter and make space for a meaningful talk focused on breast cancer awareness, prevention, and early detection.</p>
+          <ul class="event-topics" aria-label="Talk focus">
+            <li>Breast cancer awareness</li><li>Prevention</li><li>Early detection</li>
+          </ul>
+        </div>
+        <div class="event-card">
+          <p class="event-date"><time datetime="2026-10-19T13:00:00-04:00">October 19, 2026</time></p>
+          <p class="event-time">1:00 PM Eastern Time (EDT · UTC−4)</p>
+          <p class="event-status" id="event-status" role="status" aria-live="polite">Join us for VOYAG’s new chapter.</p>
+          <div class="countdown" id="event-countdown" role="timer" aria-label="Time until the VOYAG event" aria-live="off" hidden>
+            <div class="countdown-unit"><strong id="countdown-days">00</strong><span>Days</span></div>
+            <div class="countdown-unit"><strong id="countdown-hours">00</strong><span>Hours</span></div>
+            <div class="countdown-unit"><strong id="countdown-minutes">00</strong><span>Minutes</span></div>
+            <div class="countdown-unit"><strong id="countdown-seconds">00</strong><span>Seconds</span></div>
+          </div>
+          <a class="pill event-register" id="event-register" href="https://forms.gle/pSAztWAVmfGHN735A" target="_blank" rel="noopener noreferrer">Register for the Event</a>
+          <p class="event-note" id="event-note">Registration opens in a new tab.</p>
+          <noscript><p>The event begins October 19, 2026 at 1:00 PM Eastern Time. Enable JavaScript to see the live countdown.</p></noscript>
+        </div>
+      </div>
+    </section>
 
     <section id="about">
       <div class="wrap">
@@ -924,9 +979,52 @@ footer small {
 
       <div>
         <a href="mailto:voyag237@gmail.com">voyag237@gmail.com</a><br>
-        <small>Landing page concept · September 2026</small>
+        <nav class="social-links" aria-label="VOYAG social and website links">
+          <a href="https://www.instagram.com/voyag_237/?hl=en-in" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com/company/voyag237/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://voyag1.netlify.app/" target="_blank" rel="noopener noreferrer">Website</a>
+        </nav>
       </div>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      'use strict';
+      // Eastern Daylight Time applies on October 19. Use a fixed offset
+      // so every visitor counts down to the same instant worldwide.
+      const eventStart = Date.parse('2026-10-19T13:00:00-04:00');
+      const countdown = document.getElementById('event-countdown');
+      const status = document.getElementById('event-status');
+      const register = document.getElementById('event-register');
+      const note = document.getElementById('event-note');
+      const units = ['days', 'hours', 'minutes', 'seconds'].map(
+        unit => document.getElementById('countdown-' + unit)
+      );
+      let timer;
+      function updateCountdown() {
+        const remaining = eventStart - Date.now();
+        if (remaining <= 0) {
+          countdown.hidden = true;
+          status.textContent = 'The scheduled event start time has passed. Thank you for celebrating VOYAG’s new chapter with us.';
+          register.textContent = 'Follow VOYAG for Updates';
+          register.href = 'https://www.instagram.com/voyag_237/?hl=en-in';
+          note.textContent = 'Follow our Instagram for updates. Opens in a new tab.';
+          if (timer !== undefined) window.clearInterval(timer);
+          return false;
+        }
+        const seconds = Math.floor(remaining / 1000);
+        const values = [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24, Math.floor(seconds / 60) % 60, seconds % 60];
+        units.forEach((element, index) => { element.textContent = String(values[index]).padStart(2, '0'); });
+        countdown.hidden = false;
+        const label = 'Counting down to our new chapter';
+        if (status.textContent !== label) status.textContent = label;
+        return true;
+      }
+      if (updateCountdown()) timer = window.setInterval(updateCountdown, 1000);
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) updateCountdown(); });
+    })();
+  </script>
+
 </body>
 </html>

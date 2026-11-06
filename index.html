@@ -722,11 +722,11 @@ footer small {
       </a>
 
       <nav class="links" aria-label="Main navigation">
-        <a href="#announcement">Announcement</a>
+        <a href="december-outreach.html">December outreach</a>
         <a href="#about">About</a>
         <a href="#project">Our work</a>
         <a href="#contact">Contact</a>
-        <a class="pill" href="#donate">Support VOYAG</a>
+        <a class="pill" href="december-outreach.html#give">Support VOYAG</a>
       </nav>
     </div>
   </header>
@@ -745,7 +745,7 @@ footer small {
 
           <div class="actions">
             <a class="pill" href="#about">Discover VOYAG</a>
-            <a class="outline" href="#donate">Support our work</a>
+            <a class="outline" href="december-outreach.html">Support December outreach</a>
           </div>
         </div>
 
@@ -768,28 +768,8 @@ footer small {
 
     <section class="announcement" id="announcement" aria-labelledby="announcement-title">
       <div class="wrap announcement-grid">
-        <div>
-          <div class="eyebrow">Pink October · A new chapter for VOYAG</div>
-          <h2 id="announcement-title">A rebirth. A shared voice.<br>A moment for awareness.</h2>
-          <p class="announcement-copy">On <strong>October 19, 2026</strong>, we mark <strong>VOYAG’s rebrand and rebirth</strong> and commemorate <strong>Breast Cancer Awareness Month</strong>. Join us as we celebrate a new chapter and make space for a meaningful talk focused on breast cancer awareness, prevention, and early detection.</p>
-          <ul class="event-topics" aria-label="Talk focus">
-            <li>Breast cancer awareness</li><li>Prevention</li><li>Early detection</li>
-          </ul>
-        </div>
-        <div class="event-card">
-          <p class="event-date"><time datetime="2026-10-19T13:00:00-04:00">October 19, 2026</time></p>
-          <p class="event-time">1:00 PM Eastern Time (EDT · UTC−4)</p>
-          <p class="event-status" id="event-status" role="status" aria-live="polite">Join us for VOYAG’s new chapter.</p>
-          <div class="countdown" id="event-countdown" role="timer" aria-label="Time until the VOYAG event" aria-live="off" hidden>
-            <div class="countdown-unit"><strong id="countdown-days">00</strong><span>Days</span></div>
-            <div class="countdown-unit"><strong id="countdown-hours">00</strong><span>Hours</span></div>
-            <div class="countdown-unit"><strong id="countdown-minutes">00</strong><span>Minutes</span></div>
-            <div class="countdown-unit"><strong id="countdown-seconds">00</strong><span>Seconds</span></div>
-          </div>
-          <a class="pill event-register" id="event-register" href="https://forms.gle/pSAztWAVmfGHN735A" target="_blank" rel="noopener noreferrer">Register for the Event</a>
-          <p class="event-note" id="event-note">Registration opens in a new tab.</p>
-          <noscript><p>The event begins October 19, 2026 at 1:00 PM Eastern Time. Enable JavaScript to see the live countdown.</p></noscript>
-        </div>
+        <div><div class="eyebrow">December 2026 · Outreach campaign</div><h2 id="announcement-title">A season of giving.<br>A shared purpose.</h2><p class="announcement-copy">Help VOYAG prepare Christmas presents for children this December. Together, we can take a step closer to making every child feel loved and appreciated this festive season. Contact the team to find out how you can contribute.</p></div>
+        <div class="event-card"><h3>Start with a conversation.</h3><p>Ask about MoMo, Orange Money, giving from abroad, or contributing cash and supplies.</p><a class="pill event-register" href="december-outreach.html">Explore the December campaign</a><p class="event-note">No form or donation amount required to get in touch.</p></div>
       </div>
     </section>
 
@@ -957,12 +937,12 @@ footer small {
             <h3>Support the mission</h3>
 
             <p>
-              We are preparing a verified donation method. For now, contact us
-              to discuss how you can support VOYAG’s work.
+              Help us prepare for our December outreach. Choose your preferred
+              way to contribute and contact the team for verified details.
             </p>
 
-            <a href="mailto:voyag237@gmail.com?subject=Supporting%20VOYAG">
-              Ask about donating →
+            <a href="december-outreach.html#give">
+              Support the December outreach →
             </a>
           </div>
         </div>
@@ -988,43 +968,7 @@ footer small {
     </div>
   </footer>
 
-  <script>
-    (() => {
-      'use strict';
-      // Eastern Daylight Time applies on October 19. Use a fixed offset
-      // so every visitor counts down to the same instant worldwide.
-      const eventStart = Date.parse('2026-10-19T13:00:00-04:00');
-      const countdown = document.getElementById('event-countdown');
-      const status = document.getElementById('event-status');
-      const register = document.getElementById('event-register');
-      const note = document.getElementById('event-note');
-      const units = ['days', 'hours', 'minutes', 'seconds'].map(
-        unit => document.getElementById('countdown-' + unit)
-      );
-      let timer;
-      function updateCountdown() {
-        const remaining = eventStart - Date.now();
-        if (remaining <= 0) {
-          countdown.hidden = true;
-          status.textContent = 'The scheduled event start time has passed. Thank you for celebrating VOYAG’s new chapter with us.';
-          register.textContent = 'Follow VOYAG for Updates';
-          register.href = 'https://www.instagram.com/voyag_237/?hl=en-in';
-          note.textContent = 'Follow our Instagram for updates. Opens in a new tab.';
-          if (timer !== undefined) window.clearInterval(timer);
-          return false;
-        }
-        const seconds = Math.floor(remaining / 1000);
-        const values = [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24, Math.floor(seconds / 60) % 60, seconds % 60];
-        units.forEach((element, index) => { element.textContent = String(values[index]).padStart(2, '0'); });
-        countdown.hidden = false;
-        const label = 'Counting down to our new chapter';
-        if (status.textContent !== label) status.textContent = label;
-        return true;
-      }
-      if (updateCountdown()) timer = window.setInterval(updateCountdown, 1000);
-      document.addEventListener('visibilitychange', () => { if (!document.hidden) updateCountdown(); });
-    })();
-  </script>
+
 
 </body>
 </html>
